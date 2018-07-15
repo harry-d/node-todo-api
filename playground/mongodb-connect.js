@@ -21,18 +21,18 @@ MongoClient.connect("mongodb://localhost:27017/", (err, client) => {
         console.log(JSON.stringify(result.ops, undefined, 2));
     })
 
-    // db.collection("Users").insertOne({
-    //     name: "Harry",
-    //     age: "21",
-    //     location: "San Francisco"
-    // }, (err, result) => {
-    //     if (err){
-    //         return console.log("Unable to insert todo", err);
-    //     }
-    //
-    //     //ops contains all the documents that were inserted
-    //     console.log(JSON.stringify(result.ops, undefined, 2));
-    // })
+    db.collection("Users").insertOne({
+        name: "Harry",
+        age: "21",
+        location: "San Francisco"
+    }, (err, result) => {
+        if (err){
+            return console.log("Unable to insert todo", err);
+        }
+
+        //ops contains all the documents that were inserted
+        console.log(JSON.stringify(result.ops, undefined, 2));
+    })
 
 
     client.close();
